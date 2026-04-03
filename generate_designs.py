@@ -30,6 +30,20 @@ THEMES = [
      "primary":(124,77,255),"sec":(0,191,165),"acc":(255,214,0),
      "bg":(13,27,75),"nav":(26,35,126),"card":(25,45,110),
      "txt":(220,230,255),"nav_txt":(255,255,255),"dark":True},
+    {"id":"theme6_lemon","name":"레몬 팝",
+     "primary":(255,230,0),"sec":(100,220,50),"acc":(255,100,150),
+     "bg":(255,255,230),"nav":(255,230,0),"card":(255,255,255),
+     "txt":(40,50,10),"nav_txt":(50,50,10),"dark":False,
+     "lemon":True},
+    {"id":"theme7_mint","name":"민트 프레시",
+     "primary":(0,230,180),"sec":(0,200,230),"acc":(255,90,130),
+     "bg":(230,255,250),"nav":(0,220,170),"card":(255,255,255),
+     "txt":(10,60,50),"nav_txt":(255,255,255),"dark":False},
+    {"id":"theme8_peach","name":"복숭아 동산",
+     "primary":(255,140,80),"sec":(255,100,130),"acc":(80,210,230),
+     "bg":(255,240,230),"nav":(255,140,80),"card":(255,255,255),
+     "txt":(80,30,10),"nav_txt":(255,255,255),"dark":False,
+     "peach":True},
 ]
 
 # ── helpers ────────────────────────────────────────────────────────────────────
@@ -390,7 +404,8 @@ def draw_board(t):
 # ══════════════════════════════════════════════════════════════════════════════
 # GENERATE ALL
 # ══════════════════════════════════════════════════════════════════════════════
-for t in THEMES:
+NEW_IDS = {"theme6_lemon","theme7_mint","theme8_peach"}
+for t in [x for x in THEMES if x["id"] in NEW_IDS]:
     for page_fn, page_name in [(draw_main,"main"),(draw_learning,"learning"),(draw_board,"board")]:
         img = page_fn(t)
         path = f"{OUT}/{t['id']}_{page_name}.png"
