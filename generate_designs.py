@@ -2,8 +2,8 @@ from PIL import Image, ImageDraw, ImageFont
 import os, math
 
 W, H = 1440, 900
-FONT_REG  = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
-FONT_BOLD = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
+FONT_REG  = "/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc"
+FONT_BOLD = "/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc"
 OUT = "/home/user/ai-tutor-design/designs"
 os.makedirs(OUT, exist_ok=True)
 
